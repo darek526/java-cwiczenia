@@ -22,8 +22,8 @@ public class Main {
                 }
                 String[] linia = line.split(cvsSplitBy);
 
-                Ksiazka ksiazka = new Ksiazka(linia[0], linia[1], linia[2],
-                        linia[3], linia[4], Integer.parseInt(linia[5].trim()));
+                Ksiazka ksiazka = new Ksiazka(linia[0].trim(), linia[1].trim(), linia[2].trim(),
+                        linia[3].trim(), linia[4].trim(), Integer.parseInt(linia[5].trim()));
 
                 biblioteka.dodajKsiazke(ksiazka, nrLinii - 1);
 
