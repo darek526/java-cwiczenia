@@ -2,6 +2,14 @@ public class Biblioteka {
 
     private Ksiazka[] spisKsiazek;
 
+    Biblioteka(int liczba) {
+        spisKsiazek = new Ksiazka[liczba];
+    }
+
+    void dodajKsiazke(Ksiazka ksiazka, int index) {
+        spisKsiazek[index] = ksiazka;
+    }
+
     public void wyswietlBiblioteke() {
         for (int i = 0; i < spisKsiazek.length; i++) {
             spisKsiazek[i].wyswietlKsiazke();

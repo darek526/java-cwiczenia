@@ -12,21 +12,42 @@ public class Main {
         String line = "";
         String cvsSplitBy = ";";
 
+        Biblioteka biblioteka = new Biblioteka(2);
+
         try {
 
             br = new BufferedReader(new FileReader(csvFile));
+
+            boolean pominPierwszaLinie = true;
+            int index = 0;
             while ((line = br.readLine()) != null) {
+                if (pominPierwszaLinie) {
+                    pominPierwszaLinie = false;
+                    continue;
+                }
 
                 String[] slowo = line.split(cvsSplitBy);
 
-                System.out.println(
-                        "Autor: " + slowo[0]
-                                + " Tytul: " + slowo[1]
-                                + " Wydawca: " + slowo[2]
-                                + " Rok: " + slowo[3]
-                                + " ISBN: " + slowo[4]
-                                + " Liczba Stron: " + slowo[5]
+                Ksiazka ksiazka = new Ksiazka(
+                        slowo[0].trim(),
+                        slowo[1].trim(),
+                        slowo[2].trim(),
+                        slowo[4].trim(),
+                        Integer.parseInt(slowo[3].trim()),
+                        Integer.parseInt(slowo[5].trim())
                 );
+
+                biblioteka.dodajKsiazke(ksiazka, index);
+                index++;
+
+//                System.out.println(
+//                        "Autor: " + slowo[0]
+//                                + " Tytul: " + slowo[1]
+//                                + " Wydawca: " + slowo[2]
+//                                + " Rok: " + slowo[3]
+//                                + " ISBN: " + slowo[4]
+//                                + " Liczba Stron: " + slowo[5]
+//                );
 
             }
 
@@ -43,6 +64,9 @@ public class Main {
                 }
             }
         }
+
+
+        biblioteka.wyswietlBiblioteke();
 
     }
 
