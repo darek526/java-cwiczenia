@@ -10,6 +10,7 @@
 # ignoruj pliki tymczasowe idea
 .idea
 cmake-build-debug/
+*.iml
 
 # inne
 *.save
