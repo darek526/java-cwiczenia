@@ -14,6 +14,7 @@ public class Auto {
         this.pojSilnik = pojSilnik;
         this.pojBaku = pojBaku;
         this.rokProdukcji = rokProdukcji;
+        liczbaSamochodowWlasciciela++;
     }
 
     boolean jestWlaczony;
@@ -80,7 +81,10 @@ public class Auto {
         out.println("Wlasciciel nr: " + ktoryWlasciciel);
         out.println("Predkosc: " + predkosc);
         out.println("Włączony: " + czyWlaczony());
+        out.println("Liczba samochodow wlasciciela: " + liczbaSamochodowWlasciciela);
     }
+
+    static int liczbaSamochodowWlasciciela = 0;
 
     public static void main(String[] arguments) {
         Auto auto = new Auto("Syrena Bosto", "Van", 1.0, 20.0, 1970);
@@ -88,12 +92,20 @@ public class Auto {
         auto.sprzedaj();
 
         auto.tankuj(10.0);
+        auto.tankuj(10.0);
+        auto.tankuj(10.0);
+        auto.wlaczSilnik();
         auto.wlaczSilnik();
         auto.zwiekszPredkoscO_10();
         auto.zwiekszPredkoscO_10();
 
         auto.wyswietlInfo();
 
+        Auto auto2 = new Auto("Syrena Bosto", "Van", 1.0, 20.0, 1972);
+        Auto auto3 = new Auto("Syrena Bosto", "Van", 1.0, 20.0, 1971);
+        Auto auto4 = new Auto("Syrena Bosto", "Van", 1.0, 20.0, 1976);
+
+        auto4.wyswietlInfo();
     }
 
 }
