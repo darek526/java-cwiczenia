@@ -2,6 +2,14 @@ public class Biblioteka {
 
     Ksiazka[] spisKsiazek;
 
+    Biblioteka(int liczbaKsiazek) {
+        spisKsiazek = new Ksiazka[liczbaKsiazek];
+    }
+
+    void dodajKsiazke(Ksiazka ksiazka, int index) {
+        spisKsiazek[index] = ksiazka;
+    }
+
     boolean czyIstnieje(String tytul) {
         for (int i = 0; i < spisKsiazek.length; i++) {
             if (spisKsiazek[i].czyMaszTakiTytul(tytul)) {
@@ -40,6 +48,13 @@ public class Biblioteka {
             spisKsiazek[index].oddaj();
         } else {
             System.out.println("Takiej ksiazki u nas nie ma");
+        }
+    }
+
+    void wyswietlKsiazki() {
+        for (int i = 0; i < spisKsiazek.length; i++) {
+            spisKsiazek[i].wyswietlKsiazke();
+            System.out.println();
         }
     }
 
