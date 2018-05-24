@@ -21,6 +21,7 @@ public class Wynagrodzenie {
         return placa;
     }
 
+    //metoda wyciągnięta z finkcji licz_place ((IntelliJ IDEA) Refactor -> Extract -> Method ...)
     private static double liczPonad40(double stawka, double ile_godzin) {
         double placa;
         placa = 40 * stawka + (1.5 * stawka * (ile_godzin - 40));
