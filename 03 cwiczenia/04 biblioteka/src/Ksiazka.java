@@ -1,47 +1,30 @@
 public class Ksiazka {
-
     private String autor;
     private String tytul;
     private String wydawca;
-    private String rok;
     private String ISBN;
+    private int rok;
     private int liczbaStron;
-    private boolean jestWypozyczona;
 
     Ksiazka(String autor,
             String tytul,
             String wydawca,
-            String rok,
             String ISBN,
+            int rok,
             int liczbaStron) {
         this.autor = autor;
         this.tytul = tytul;
         this.wydawca = wydawca;
-        this.rok = rok;
         this.ISBN = ISBN;
+        this.rok = rok;
         this.liczbaStron = liczbaStron;
-        jestWypozyczona = false;
+        this.jestWypozyczona = false;
     }
 
-    public void wyswietlKsiazke() {
-        System.out.println(autor);
-        System.out.println(tytul);
-        System.out.println(wydawca);
-        System.out.println(rok);
-        System.out.println(ISBN);
-        System.out.println(liczbaStron);
-    }
+    private boolean jestWypozyczona;
 
     public boolean czyWypozyczona() {
         return jestWypozyczona;
-    }
-
-    public boolean czyMaszTakiTytul(String tytul) {
-        if (this.tytul == tytul) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     public void wypozycz() {
@@ -51,4 +34,18 @@ public class Ksiazka {
     public void oddaj() {
         jestWypozyczona = false;
     }
+
+    public void wyswietlKsiazke() {
+        System.out.println("Autor: " + autor);
+        System.out.println("Tytuł: " + tytul);
+        System.out.println("Wydawca: " + wydawca);
+        System.out.println("ISBN: " + ISBN);
+        System.out.println("Rok: " + rok);
+        System.out.println("Liczba stron: " + liczbaStron);
+    }
+
+    public boolean sprawdzTytul(String tytul) {
+        return this.tytul == tytul;
+    }
+
 }

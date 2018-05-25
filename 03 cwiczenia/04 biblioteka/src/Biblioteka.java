@@ -1,60 +1,60 @@
 public class Biblioteka {
 
-    Ksiazka[] spisKsiazek;
+    private Ksiazka[] spisKsiazek;
 
-    Biblioteka(int liczbaKsiazek) {
-        spisKsiazek = new Ksiazka[liczbaKsiazek];
+    Biblioteka(int liczba) {
+        spisKsiazek = new Ksiazka[liczba];
     }
 
     void dodajKsiazke(Ksiazka ksiazka, int index) {
         spisKsiazek[index] = ksiazka;
     }
 
-    boolean czyIstnieje(String tytul) {
+    public void wyswietlBiblioteke() {
         for (int i = 0; i < spisKsiazek.length; i++) {
-            if (spisKsiazek[i].czyMaszTakiTytul(tytul)) {
+            spisKsiazek[i].wyswietlKsiazke();
+            System.out.println();
+        }
+    }
+
+    public boolean czyIstnieje(String tytul) {
+        for (int i = 0; i < spisKsiazek.length; i++) {
+            if (spisKsiazek[i].sprawdzTytul(tytul)) {
                 return true;
             }
         }
         return false;
     }
 
-    int czyIstniejeID(String tytul) {
+    public int czyIstniejeID(String tytul) {
         for (int i = 0; i < spisKsiazek.length; i++) {
-            if (spisKsiazek[i].czyMaszTakiTytul(tytul)) {
+            if (spisKsiazek[i].sprawdzTytul(tytul)) {
                 return i;
             }
         }
         return -1;
     }
 
-    void wypozyczKsiazke(String tytul) {
+    public void wypozyczKsiazke(String tytul) {
         int index = czyIstniejeID(tytul);
         if (index != -1) {
             if (spisKsiazek[index].czyWypozyczona()) {
-                System.out.println("Książka jest wypozyczona");
+                System.out.println("Książka jest wypożyczona.");
             } else {
-                spisKsiazek[index].wyswietlKsiazke();
                 spisKsiazek[index].wypozycz();
+                spisKsiazek[index].wyswietlKsiazke();
             }
         } else {
-            System.out.println("Takiej ksiazki u nas nie ma");
+            System.out.println("Nie mamy takiej książki!");
         }
     }
 
-    void oddajKsiazke(String tytul) {
+    public void oddajKsiazke(String tytul) {
         int index = czyIstniejeID(tytul);
         if (index != -1) {
             spisKsiazek[index].oddaj();
         } else {
             System.out.println("Takiej ksiazki u nas nie ma");
-        }
-    }
-
-    void wyswietlKsiazki() {
-        for (int i = 0; i < spisKsiazek.length; i++) {
-            spisKsiazek[i].wyswietlKsiazke();
-            System.out.println();
         }
     }
 
