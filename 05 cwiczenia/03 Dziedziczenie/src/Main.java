@@ -5,7 +5,23 @@ public class Main {
     public static void main(String[] args) {
 //        test1();
 //        test2();
-        polimorfizm();
+//        polimorfizm();
+        polimorfizm2();
+    }
+
+    private static void polimorfizm2() {
+        Zwierze[] zwierzeta = new Zwierze[3];
+
+        zwierzeta[0] = new Jamnik();
+        zwierzeta[1] = new Jesiotr();
+        zwierzeta[2] = new Szpak();
+
+        Arrays.asList(zwierzeta)
+                .stream()
+                .forEach(el -> {
+                    System.out.println(el);
+                    el.poruszajSie();
+                });
     }
 
     private static void polimorfizm() {

@@ -26,11 +26,11 @@ public class Main {
         double[] tablica = new double[rozmiar];
 
         System.out.println("Podaj dane do tablicy: ");
-        //Wczytywanie do tablicy
+        // Wczytywanie do tablicy
         for (int indeks = 0; indeks < rozmiar; indeks++) {
             tablica[indeks] = scanner.nextDouble(); //to do wyjatki
         }
-        //Wyswietlenie z tablicy
+        // Wyswietlenie z tablicy
         for (int indeks = 0; indeks < rozmiar; indeks++) {
             System.out.print(tablica[indeks] + " ");
         }
@@ -44,7 +44,7 @@ public class Main {
 
         Arrays.sort(tablica);
         System.out.println("Posortowana tablica:");
-        //Wyswietlenie z tablicy
+        // Wyswietlenie z tablicy
         for (int indeks = 0; indeks < rozmiar; indeks++) {
             System.out.print(tablica[indeks] + " ");
         }
@@ -84,7 +84,7 @@ public class Main {
     }
 
     private static void zapiszDoPliku(double srednia, double mediana) throws IOException {
-        //zapisuje do pliku medianę i średnią
+        // zapisuje do pliku medianę i średnią
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter("wynik.txt");
@@ -98,5 +98,4 @@ public class Main {
             }
         }
     }
-    
 }
