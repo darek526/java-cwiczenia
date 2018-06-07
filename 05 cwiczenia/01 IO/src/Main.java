@@ -32,6 +32,8 @@ public class Main {
         for (int indeks = 0; indeks < rozmiar; indeks++) {
             System.out.print(tablica[indeks] + " ");
         }
+        System.out.println();
+
         double suma = 0.0;
         for (int indeks = 0; indeks < rozmiar; indeks++) {
             suma += tablica[indeks];
@@ -45,6 +47,7 @@ public class Main {
         for (int indeks = 0; indeks < rozmiar; indeks++) {
             System.out.print(tablica[indeks] + " ");
         }
+        System.out.println();
 
         boolean parzysta;
         if (rozmiar % 2 == 0) {
@@ -65,4 +68,5 @@ public class Main {
         }
     }
 
+    //to do zapisać do pliku medianę i średnią
 }
