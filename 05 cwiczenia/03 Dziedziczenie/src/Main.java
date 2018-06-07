@@ -22,8 +22,8 @@ public class Main {
     }
 
     private static void test2() {
-        Jamnik[] jamniks = new Jamnik[3];
-        Arrays.fill(jamniks, new Jamnik());
+        Jamnik[] jamniki = new Jamnik[3];
+        Arrays.fill(jamniki, new Jamnik());
 
 //        for (int indeks = 0; indeks < 3; indeks++) {
 //            System.out.println(jamniks[indeks]);
@@ -31,7 +31,7 @@ public class Main {
 //        }
 
         //to samo z użyciem innego zapisu pętli
-        for (Jamnik jamnik : jamniks) {
+        for (Jamnik jamnik : jamniki) {
             System.out.println(jamnik);
             jamnik.poruszajSie();
         }
